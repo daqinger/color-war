@@ -17,7 +17,7 @@
 
 > 构建方法
 
-1.准备好 redis，mysql，rabbitmq，mongodb，nacos
+1.准备好 IDEA, redis，mysql，rabbitmq，mongodb，nacos
 
 2.我用了一个其他项目的网关，自己写也是没有问题，记得配置跨域
 
@@ -61,3 +61,5 @@ spring:
 4.初始化 rabbitmq ，[开通Stomp通道](https://blog.csdn.net/weixin_40461281/article/details/81806921)
 
 5.通过请求地址，创建交换机（具体见controller层）
+
+备注：xxl-job的初始化方法和运行方法见[xxl-job](https://www.xuxueli.com/xxl-job/)
