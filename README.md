@@ -16,5 +16,48 @@
 3. 注意事项：只有一点，，提交数据的契机只有打开选色板，点击确认后才会提交！！！！点击确认后才会提交！！！！点击确认后才会提交！！！！
 
 > 构建方法
+
 1.准备好 redis，mysql，rabbitmq，mongodb，nacos
-2.我用了一个其他项目的网关
+
+2.我用了一个其他项目的网关，自己写也是没有问题，记得配置跨域
+
+```
+@Configuration
+public class MyCorsConfiguration {
+
+    @Bean
+    public CorsWebFilter corsWebFilter(){
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
+        //1.配置跨域
+        corsConfiguration.addAllowedHeader("*");
+        corsConfiguration.addAllowedMethod("*");
+        corsConfiguration.addAllowedOrigin("*");
+        corsConfiguration.setAllowCredentials(true);
+
+        source.registerCorsConfiguration("/**",corsConfiguration);
+        return new CorsWebFilter(source);
+    }
+}
+```
+网关的配置如下：
+
+```
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: colorwar_route
+          uri: lb://color-war  #lb,指的是负载均衡
+          predicates:
+            - Path=/api/battle/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+```
+
+3.初始化 xxl-job ，添加 sendTempColorToRabbit，updateColorCache 两个任务。
+
+4.初始化 rabbitmq ，[开通Stomp通道](https://blog.csdn.net/weixin_40461281/article/details/81806921)
+
+5.通过请求地址，创建交换机（具体见controller层）
