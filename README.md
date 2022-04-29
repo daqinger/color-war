@@ -1,37 +1,18 @@
 # color-war
+> 介绍
 
-#### 介绍
-颜色大战 后端项目
+在2017年4月1日愚人节,社交网站Reddit发布了一个全球性社会实验:每个用户每隔5分钟可以在一个1000x1000像素的画布上绘制一个色块... [相关视频连接](https://www.bilibili.com/video/av71160863?from=search&seid=14889639180811676751&spm_id_from=333.337.0.0)
 
-#### 软件架构
-软件架构说明
+基于上面的创意，便有了此项目。
 
+前端采用 VUE+ [Element UI](https://element.eleme.cn/#/zh-CN)
 
-#### 安装教程
+> 简陋的操作说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. 玩法：每人每次只能填一个格子（因为是想复现原来网站的创意，而不是一个画画网站）
 
-#### 使用说明
+2. 目前的设定：主页和分区更新时间是1分钟 ，一个分区数据推送时间是30s，所以您画的格子刷新后在主页看不到，不要着急，那也许是还没更新
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+3. 注意事项：只有一点，，提交数据的契机只有打开选色板，点击确认后才会提交！！！！点击确认后才会提交！！！！点击确认后才会提交！！！！
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+> 构建方法
